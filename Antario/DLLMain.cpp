@@ -53,18 +53,6 @@ BOOL WINAPI DllMain(HMODULE hModule, DWORD dwReason, LPVOID lpReserved)
 	if (dwReason == DLL_PROCESS_ATTACH && GetModuleHandleA("csgo.exe"))
 	{
 		GetVolumeInformation(szHD, (LPTSTR)szVolNameBuff, 255, &dwSerial, &dwMFL, &dwSysFlags, (LPTSTR)szFileSys, 255);
-
-		if (dwSerial == 0) //no antipaste
-		{
-			Sleep(100);
-		}
-		else
-		{
-			// when HWID rejected
-			exit(0);
-			return TRUE;
-		}
-
 		{
 			{
 				DisableThreadLibraryCalls(hModule);
