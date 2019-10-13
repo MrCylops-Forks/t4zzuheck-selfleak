@@ -254,7 +254,6 @@
     <ClInclude Include="Antario\Features\Visuals\grenadetracer.h" />
     <ClInclude Include="Antario\Features\Visuals\RemasteredEsp.h" />
     <ClInclude Include="Antario\Hooks.h" />
-    <ClInclude Include="Antario\Menu.h" />
     <ClInclude Include="Antario\Menu\Hotkeys.h" />
     <ClInclude Include="Antario\Menu\KeyVisualizer.h" />
     <ClInclude Include="Antario\Menu\lodepng\lodepng.h" />

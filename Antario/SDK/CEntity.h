@@ -238,7 +238,7 @@ public:
 
 	void UpdateClientAnimation()
 	{
-		Utils::GetVFunc<void(__thiscall*)(void*)>(this, 221)(this);
+		Utils::GetVFunc<void(__thiscall*)(void*)>(this, 223)(this);
 	}
 
 	void ClientAnimations(bool value)
@@ -444,7 +444,7 @@ public:
 
 	bool IsPlayer() {
 		using original_fn = bool(__thiscall*)(C_BaseEntity*);
-		return (*(original_fn**)this)[155](this);
+		return (*(original_fn**)this)[157](this);
 	}
 
 	bool IsKnifeorNade();
@@ -561,7 +561,7 @@ public:
 	{
 		Vector ret;
 		typedef void(__thiscall * OrigFn)(void*, Vector&);
-		Utils::GetVFunc<OrigFn>(this, 281)(this, ret);
+		Utils::GetVFunc<OrigFn>(this, 283)(this, ret);
 		return ret;
 	}
 
@@ -633,13 +633,13 @@ public:
 	float GetInaccuracy()
 	{
 		typedef float(__thiscall* oInaccuracy)(PVOID);
-		return Utils::GetVFunc< oInaccuracy >(this, 476)(this);
+		return Utils::GetVFunc< oInaccuracy >(this, 478)(this);
 	}
 
 	float GetSpread()
 	{
 		typedef float(__thiscall* oWeaponSpread)(PVOID);
-		return Utils::GetVFunc< oWeaponSpread >(this, 446)(this);
+		return Utils::GetVFunc< oWeaponSpread >(this, 448)(this);
 	}
 
 	float GetAccuracyPenalty()
@@ -657,7 +657,7 @@ public:
 	void AccuracyPenalty()
 	{
 		typedef void(__thiscall *OrigFn)(void *);
-		return Utils::GetVFunc<OrigFn>(this, 447)(this);
+		return Utils::GetVFunc<OrigFn>(this, 449)(this);
 	}
 
     float GetNextPrimaryAttack()
@@ -674,7 +674,7 @@ public:
 
     WeaponInfo_t* GetCSWpnData()
     {
-        return Utils::CallVFunc<454, WeaponInfo_t*>(this);
+        return Utils::CallVFunc<456, WeaponInfo_t*>(this);
     }
 
     std::string GetName()

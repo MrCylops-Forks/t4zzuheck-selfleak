@@ -19,23 +19,23 @@ Hotkeys g_Hotkeys;
 KeyVisualizer g_KeyVisualizer;
 
 // NEW MENU
-Color menu_background(33, 33, 33);
-Color menu_background2(66, 66, 66);
-Color menu_text(255, 255, 255);
-Color menu_accent(132, 0, 195);
+Color menu_background(33, 33, 33);  //33, 33, 33
+Color menu_background2(66, 66, 66);  //66, 66, 66
+Color menu_text(255, 255, 255);  //255, 255, 255
+Color menu_accent(132, 0, 195); //132, 0, 195
 
-Color button_light(239, 239, 239);
-Color button_idle_gray(191, 184, 191);
-Color button_dark(23, 23, 23);
+Color button_light(239, 239, 239); //239, 239, 239
+Color button_idle_gray(191, 184, 191); //191, 184, 191
+Color button_dark(23, 23, 23); //23, 23, 23
 
-Color EnemyColor(255, 255, 255);
-Color TeamColor(255, 255, 255);
-Color LocalColor(255, 255, 255);
-Color World2Color(50, 50, 50);
-Color Prop2Color(50, 50, 50);
-Color AmbientLight2Color(255, 255, 255);
-Color ArmsChams2Color(255, 255, 255);
-Color WeaponChams2Color(255, 255, 255);
+Color EnemyColor(255, 255, 255); //255, 255, 255
+Color TeamColor(255, 255, 255); //255, 255, 255
+Color LocalColor(255, 255, 255); //255, 255, 255
+Color World2Color(50, 50, 50); //50, 50, 50
+Color Prop2Color(50, 50, 50); //50, 50, 50
+Color AmbientLight2Color(255, 255, 255); //255, 255, 255
+Color ArmsChams2Color(255, 255, 255); //255, 255, 255
+Color WeaponChams2Color(255, 255, 255); //255, 255, 255
 
 int OldTickCount = 0;
 int GlobalOpacity = 0;
@@ -410,9 +410,9 @@ void Menu::Render()
 				std::string shotscounter;
 				std::string shotscounter2;
 				std::string shotscounter3;
-				shotscounter += "shot: " + std::to_string(g::shots);
-				shotscounter2 += "hit: " + std::to_string(g::hits);
-				shotscounter3 += "miss: " + std::to_string(g::shots - g::hits);
+				shotscounter += "   shot: " + std::to_string(g::shots);
+				shotscounter2 += "  hit: " + std::to_string(g::hits);
+				shotscounter3 += "  miss: " + std::to_string(g::shots - g::hits);
 				g_pSurface->DrawT(55, 400, Color(255, 255, 255), g::Indicators, true, shotscounter.c_str());
 				g_pSurface->DrawT(55, 430, Color(255, 255, 255), g::Indicators, true, shotscounter2.c_str());
 				g_pSurface->DrawT(55, 460, Color(255, 255, 255), g::Indicators, true, shotscounter3.c_str());
@@ -481,7 +481,7 @@ void Menu::Render()
 		g_pSurface->OutlinedRect(Pos.x, Pos.y, Width, Height, menu_accent);
 
 		// Header
-		g_pSurface->DrawT(Pos.x + (Width / 2), Pos.y + 6, menu_accent, g::SansSerif, true, "t4zCheats");
+		g_pSurface->DrawT(Pos.x + (Width / 2), Pos.y + 6, menu_accent, g::SansSerif, true, "cool");  // if you got some brain you know what is this 
 
 #pragma endregion
 
@@ -502,7 +502,7 @@ void Menu::Render()
 		PreviousControl = -1;
 		OldOffsetY = 0;
 
-		Tab("legit");
+		Tab("Legit");
 		{
 			CheckBox("Legit Aimbot", &Config.LegitAimbot);
 			Slider(100, "Legit Aim Speed", &Config.AimSpeed);
@@ -520,7 +520,7 @@ void Menu::Render()
 
 		Tab("aimbot");
 		{
-			SubTab("main");
+			SubTab("Main");
 			{
 				CheckBox("Enable", &Config.Aimbot);
 				CheckBox("Silent Aim", &Config.SilentAim, "Turns on and off visual aimbot snapping");
@@ -615,7 +615,7 @@ void Menu::Render()
 			}
 		}
 
-		Tab("antiaim");
+		Tab("AntiAim");
 		{
 			CheckBox("Enable", &Config.Antiaim);
 			ComboBox("Anti Aim Flags", { "On Ground", "In Air" }, &AntiAimFlag);
@@ -693,9 +693,9 @@ void Menu::Render()
 		ControlsX = GroupTabPos[0];
 		ControlsX2 = ControlsX + ((Width / 2) - 30);
 
-		Tab("visuals");
+		Tab("Visuals");
 		{
-			SubTab("esp");
+			SubTab("Esp");
 			{
 				ComboBox("Entitys", { "Player", "Bomb" }, &EspType); // For switching settings!
 				switch (EspType)
@@ -755,7 +755,7 @@ void Menu::Render()
 			ControlsX = GroupTabPos[0];
 			ControlsX2 = ControlsX + ((Width / 2) - 30);
 
-			SubTab("glow");
+			SubTab("Glow");
 			{
 				CheckBox("Enemy Glow", &Config.EnemyGlow);
 				if (Config.EnemyGlow)
@@ -939,9 +939,9 @@ void Menu::Render()
 		ControlsX = GroupTabPos[0];
 		ControlsX2 = ControlsX + ((Width / 2) - 30);
 
-		Tab("misc");
+		Tab("Misc");
 		{
-			SubTab("first");
+			SubTab("First");
 			{
 				ComboBox("Fake Lag Type", { "Off","Factor", "Adaptive", "Switch" }, & Config.FakeLagType);
 				Slider(20, "Fake Lag Value On Ground", &Config.FakeLagValue);
@@ -983,7 +983,7 @@ void Menu::Render()
 			ControlsX = GroupTabPos[0];
 			ControlsX2 = ControlsX + ((Width / 2) - 30);
 
-			SubTab("second");
+			SubTab("Second");
 			{
 				ComboBox("Hitsound", { "None","Metalic", "Metalic2", "Beep1", "Beep2", "Bell", "Headshot", "Headshot2", "Fatality1", "Fatality2", "Cod", "Laser" }, & Config.Hitmarker);
 				KeyBind("Thirdperson Hotkey", &Config.ThirdpersonHotkey);
@@ -1021,7 +1021,7 @@ void Menu::Render()
 		ControlsX = GroupTabPos[0];
 		ControlsX2 = ControlsX + ((Width / 2) - 30);
 
-		Tab("config");
+		Tab("Config");
 		{
 			static bool overridemenucolor;
 			CheckBox("Override Accent", &overridemenucolor);
