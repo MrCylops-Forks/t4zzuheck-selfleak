@@ -561,7 +561,7 @@ public:
 	{
 		Vector ret;
 		typedef void(__thiscall * OrigFn)(void*, Vector&);
-		Utils::GetVFunc<OrigFn>(this, 283)(this, ret);
+		Utils::GetVFunc<OrigFn>(this, 284)(this, ret);
 		return ret;
 	}
 
@@ -633,13 +633,13 @@ public:
 	float GetInaccuracy()
 	{
 		typedef float(__thiscall* oInaccuracy)(PVOID);
-		return Utils::GetVFunc< oInaccuracy >(this, 478)(this);
+		return Utils::GetVFunc< oInaccuracy >(this, 479)(this);
 	}
 
 	float GetSpread()
 	{
 		typedef float(__thiscall* oWeaponSpread)(PVOID);
-		return Utils::GetVFunc< oWeaponSpread >(this, 448)(this);
+		return Utils::GetVFunc< oWeaponSpread >(this, 449)(this);
 	}
 
 	float GetAccuracyPenalty()
@@ -674,7 +674,7 @@ public:
 
     WeaponInfo_t* GetCSWpnData()
     {
-        return Utils::CallVFunc<456, WeaponInfo_t*>(this);
+        return Utils::CallVFunc<457, WeaponInfo_t*>(this);
     }
 
     std::string GetName()
